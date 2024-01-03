@@ -16,7 +16,7 @@ My setup includes:
 ## Install
 
 ```sh
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/djamseed/dotfiles/main/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/djamseed-khodabocus-cko/dotfiles/main/install.sh)"
 ```
 
 This will install Homebrew packages and create symlinks from this repo to your home directory.
