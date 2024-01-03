@@ -33,7 +33,8 @@ symbol = ' '
 
 [hostname]
 format = '[$ssh_symbol](bold blue) on [$hostname](bold red) '
-ssh_only = true
+disabled = false
+ssh_only = false
 
 [lua]
 symbol = ' '
@@ -42,6 +43,7 @@ symbol = ' '
 symbol = ' '
 
 [os.symbols]
+disabled = false
 Alpine = ' '
 Arch = ' '
 Debian = ' '

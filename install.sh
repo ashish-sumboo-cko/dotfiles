@@ -26,11 +26,11 @@ fi
 if ! test "$(which brew)"; then
     echo 'Installing Homebrew...'
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    eval "$(/usr/local/bin/brew shellenv)"
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 echo 'Installing dotfiles...'
-git clone --recursive https://github.com/djamseed/dotfiles ~/.dotfiles && cd ~/.dotfiles
+git clone https://github.com/djamseed/dotfiles ~/.dotfiles && cd ~/.dotfiles
 
 # Update Homebrew recipes
 brew update
