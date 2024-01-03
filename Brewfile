@@ -71,4 +71,4 @@ cask 'tomighty'
 
 mas 'Amphetamine', id: 937984704
 mas 'Numbers', id: 409203825
-mas 'Microsoft Remote Desktop', id: id1295203466
+mas 'Microsoft Remote Desktop', id: 1295203466
