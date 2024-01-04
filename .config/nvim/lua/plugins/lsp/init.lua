@@ -51,6 +51,12 @@ return {
             on_attach = on_attach,
         })
 
+        -- Csharp
+        lspconfig.csharp_ls.setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
         -- Protobuf
         lspconfig.bufls.setup({
             capabilities = capabilities,
