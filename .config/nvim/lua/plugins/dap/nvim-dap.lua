@@ -2,7 +2,6 @@
 return {
     "mfussenegger/nvim-dap",
     dependencies = {
-        { "rcarriga/nvim-dap-ui", lazy = true },
         { "jay-babu/mason-nvim-dap.nvim", lazy = true },
     },
     event = "VeryLazy",
@@ -53,32 +52,5 @@ return {
         map("n", "<leader>B", function()
             dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
         end, { desc = "Debug: Set Breakpoint" })
-
-        local dapui = require("dapui")
-
-        dapui.setup({
-            -- Set icons to characters that are more likely to work in every terminal.
-            icons = { expanded = "▾", collapsed = "▸", current_frame = "*" },
-            controls = {
-                icons = {
-                    pause = "⏸",
-                    play = "▶",
-                    step_into = "⏎",
-                    step_over = "⏭",
-                    step_out = "⏮",
-                    step_back = "b",
-                    run_last = "▶▶",
-                    terminate = "⏹",
-                    disconnect = "⏏",
-                },
-            },
-        })
-
-        -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
-        map("n", "<S-F7>", dapui.toggle, { desc = "Debug: See last session result." })
-
-        dap.listeners.after.event_initialized["dapui_config"] = dapui.open
-        dap.listeners.before.event_terminated["dapui_config"] = dapui.close
-        dap.listeners.before.event_exited["dapui_config"] = dapui.close
     end,
 }

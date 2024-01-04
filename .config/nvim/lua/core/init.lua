@@ -16,7 +16,7 @@ require("core.options")
 require("core.keymaps")
 require("core.autocmds")
 
-require("lazy").setup({ { import = "plugins" }, { import = "plugins.lsp" } }, {
+require("lazy").setup({ { import = "plugins" }, { import = "plugins.lsp" }, { import = "plugins.dap" } }, {
     change_detection = {
         notify = false,
     },
