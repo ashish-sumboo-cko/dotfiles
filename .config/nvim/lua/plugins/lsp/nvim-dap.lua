@@ -22,6 +22,29 @@ return {
         local dap = require("dap")
         local map = require("core.utils").map
 
+        dap.adapters.coreclr = {
+            type = "executable",
+            command = "/usr/local/bin/netcoredbg/netcoredbg",
+            args = { "--interpreter=vscode" },
+        }
+
+        dap.adapters.netcoredbg = {
+            type = "executable",
+            command = "/usr/local/bin/netcoredbg/netcoredbg",
+            args = { "--interpreter=vscode" },
+        }
+
+        dap.configurations.cs = {
+            {
+                type = "coreclr",
+                name = "launch - netcoredbg",
+                request = "launch",
+                program = function()
+                    return vim.fn.input("Path to dll", vim.fn.getcwd() .. "/bin/Debug/", "file")
+                end,
+            },
+        }
+
         map("n", "<F5>", dap.continue, { desc = "Debug: Start/Continue" })
         map("n", "<F7>", dap.step_into, { desc = "Debug: Step Into" })
         map("n", "<F8>", dap.step_over, { desc = "Debug: Step Over" })
