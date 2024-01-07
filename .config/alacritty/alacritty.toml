@@ -35,7 +35,7 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 
 [shell]
 program = "/opt/homebrew/bin/bash"
-args = ["-l", "-c", "/opt/homebrew/bin/tmux a -t 0 || /opt/homebrew/bin/tmux"]
+args = ["-l", "-c", "/opt/homebrew/bin/tmux a -t main || /opt/homebrew/bin/tmux new -t main"]
 
 [window]
 decorations = "full"
