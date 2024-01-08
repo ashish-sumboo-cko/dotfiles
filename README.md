@@ -16,7 +16,7 @@ My setup includes:
 ## Install
 
 ```sh
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/djamseed-khodabocus-cko/dotfiles/main/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ashish-sumboo-cko/dotfiles/main/install.sh)"
 ```
 
 This will install Homebrew packages and create symlinks from this repo to your home directory.
@@ -46,7 +46,3 @@ git config --global user.email "$GIT_AUTHOR_EMAIL"
 GH_USER="nickname"
 git config --global github.user "$GH_USER"
 ```
-
-## Misc
-
-For my Neovim setup, see [here](https://github.com/djamseed/nvim).
