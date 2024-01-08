@@ -26,12 +26,6 @@ map("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
 map("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
 map("n", "<leader>sx", "<CMD>close<CR>", { desc = "Close current split" })
 --
--- Tabs
-map("n", "<leader>to", "<CMD>tabnew<CR>", { desc = "Open a new tab" })
-map("n", "<leader>tx", "<CMD>tabclose<CR>", { desc = "Close current tab" })
-map("n", "<leader>tn", "<CMD>tabn<CR>", { desc = "Go to next tab" })
-map("n", "<leader>tp", "<CMD>tabp<CR>", { desc = "Go to previous tab" })
-map("n", "<leader>tf", "<CMD>tabnew %<CR>", { desc = "Open current buffer in a new tab" })
 
 -- Exiting
 --
