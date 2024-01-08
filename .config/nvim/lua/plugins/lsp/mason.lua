@@ -28,7 +28,6 @@ return {
             ensure_installed = {
                 "bashls",
                 "bufls",
-                "csharp_ls",
                 "dockerls",
                 "gopls",
                 "htmx",
