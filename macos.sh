@@ -310,17 +310,6 @@ sudo touch /private/var/vm/sleepimage
 # …and make sure it can’t be rewritten
 sudo chflags uchg /private/var/vm/sleepimage
 
-# System Preferences, Sharing
-# Computer name: [YOUR COMPUTER NAME]
-# [ ] Remote Apple events
-# [ ] Remote login
-sudo scutil --set ComputerName "ATHENA"
-sudo scutil --set HostName "ATHENA"
-sudo scutil --set LocalHostName "ATHENA"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "0x6D746873"
-sudo systemsetup -setremoteappleevents off
-sudo systemsetup -setremotelogin off
-
 # System Preferences, Time Maching
 # [ ] Use new hard drives as backup drives
 # [ ] Local Time Machine backups
@@ -494,38 +483,6 @@ defaults write com.apple.TextEdit RichText -int 0
 defaults write com.apple.TextEdit PlainTextEncoding -int 4
 defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 
-# Transmission
-defaults write org.m0k.transmission AutoSize -bool false
-defaults write org.m0k.transmission AutoStartDownload -bool true
-defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
-defaults write org.m0k.transmission BlocklistURL -string \
-    "https://github.com/Naunter/BT_BlockLists/raw/master/bt_blocklists.gz"
-defaults write org.m0k.transmission CheckDownload -bool false
-defaults write org.m0k.transmission CheckQuit -bool false
-defaults write org.m0k.transmission CheckRemove -bool true
-defaults write org.m0k.transmission CheckRemoveDownloading -bool true
-defaults write org.m0k.transmission CheckUpload -bool false
-defaults write org.m0k.transmission DeleteOriginalTorrent -bool false
-defaults write org.m0k.transmission DisplayProgressBarAvailable -bool true
-defaults write org.m0k.transmission DownloadAsk -bool true
-defaults write org.m0k.transmission DownloadAskManual -bool false
-defaults write org.m0k.transmission DownloadAskMulti -bool false
-defaults write org.m0k.transmission DownloadLocationConstant -bool false
-defaults write org.m0k.transmission EncryptionRequire -bool true
-defaults write org.m0k.transmission MagnetOpenAsk -bool false
-defaults write org.m0k.transmission PeersTorrent -int 10
-defaults write org.m0k.transmission PeersTotal -int 200
-defaults write org.m0k.transmission PlayDownloadSound -bool false
-defaults write org.m0k.transmission RandomPort -bool false
-defaults write org.m0k.transmission SleepPrevent -bool true
-defaults write org.m0k.transmission SmallView -bool true
-defaults write org.m0k.transmission SpeedLimitDownloadLimit -int 2000
-defaults write org.m0k.transmission SpeedLimitUploadLimit -int 1000
-defaults write org.m0k.transmission SUEnableAutomaticChecks -bool false
-defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool false
-defaults write org.m0k.transmission WarningDonate -bool false
-defaults write org.m0k.transmission WarningLegal -bool false
-
 # Kill affected applications
 for app in "Activity Monitor" \
     "Address Book" \
@@ -539,8 +496,7 @@ for app in "Activity Monitor" \
     "Photos" \
     "Safari" \
     "SystemUIServer" \
-    "Terminal" \
-    "Transmission"; do
+    "Terminal"; do
     killall "${app}" &>/dev/null
 done
 
