@@ -30,7 +30,7 @@ if ! test "$(which brew)"; then
 fi
 
 echo 'Installing dotfiles...'
-git clone https://github.com/djamseed-khodabocus-cko/dotfiles ~/.dotfiles && cd ~/.dotfiles
+git clone https://github.com/ashish-sumboo-cko/dotfiles ~/.dotfiles && cd ~/.dotfiles
 
 # Update Homebrew recipes
 brew update
